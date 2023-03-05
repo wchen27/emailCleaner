@@ -36,7 +36,6 @@ def spamorham():
     data = request.args.get('email')
     spamcounts = get_word_counts(data)
     data = rf.predict([spamcounts])
-    print(data)
     if data == ['1']:
         data = 'Spam!'
     elif data == ['0']:
@@ -45,4 +44,4 @@ def spamorham():
     return render_template('spamorham.html', data=data)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=5050, debug=True)

@@ -18,6 +18,7 @@ data = [','.join(line.split(',')[1:]) for line in data]
 train, test = train_test_split(data, test_size=0.2) #20% for test
 rf = RandomForestClassifier(n_estimators=500, max_depth=50)
 
+
 X_train, y_train = [], []
 for line in train:
     line = line.split(',')
