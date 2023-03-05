@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
     <title>website</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='spamorham.png') }}" />
     <style>
         body {
             background-color: #ffb8b8;
@@ -11,7 +12,7 @@
 
         h1 {
             font-size: 3em;
-            color: #ccc;
+            color: #fff;
         }
 
         #emailbodybox {
@@ -20,31 +21,40 @@
             font-size: 1.2em;
             padding: 15px 10px;
             border-radius: 5px;
+            background-color: #ffd8d8;
         }
 
         #submitbutton {
-            width: 100px;
+            width: 250px;
             height: 50px;
             font-size: 1.2em;
             padding: 10px;
+            color: #5c5c5c;
             border: 1px solid #ccc;
             border-radius: 5px;
-            background-color: #fff;
+            background-color: #ffe0e0;
             cursor: pointer;
+        }
+
+        #submitbutton:hover {
+            background-color: #ffefef;
         }
 
     </style>
 </head>
 <body>
-    <img src="{{ url_for('static', filename='spamorham.png') }}"/>
+    <div>
+        <img src="{{ url_for('static', filename='spamorham.png') }}"/>
+    </div>
+    
     <h1>Welcome to Spam or Ham!</h1>
 
     <form action="/spamorham">
-        <input type="text" name="email" id="emailbodybox" placeholder="Enter email body"> <br>
-        <!-- add padding between input form and button-->
+        <textarea type="text" name="email" rows="14" cols="20" wrap="soft" id="emailbodybox" placeholder="Enter email body"> </textarea> 
         <br>
         <br>
-        <input type="submit" id="submitbutton" value="Submit">
+        <br>
+        <input type="submit" id="submitbutton" value="Spam or Ham?">
     </form>
 
 </body>

@@ -5,9 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
+    <style>
+        body {
+            background-color: #ffb8b8;
+            font-family: sans-serif;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #fff;
+        }
+
+        #emailbodybox {
+            width: 50%;
+            height: 100px;
+            font-size: 1.2em;
+            padding: 15px 10px;
+            border-radius: 5px;
+        }
+
+        #submitbutton {
+            width: 100px;
+            height: 50px;
+            font-size: 1.2em;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        p {
+            font-size: 2em;
+            color: #fff;
+        }
+
+        div {
+            text-align: center;
+        }
+
+        .button {
+            display: block;
+            text-align: center;
+            width: 250px;
+            height: 50px;
+            font-size: 1.2em;
+            padding: 10px;
+            color: #5c5c5c;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #ffe0e0;
+            cursor: pointer;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>This is the results page</h1>
+    <h1>And the result is....</h1>
     <p>Your email is {{ data }} </p>
+
+   
+    {% if data == "Spam!" %}
+            <a href="/"> <img src="{{ url_for('static', filename='spam.png') }}"/> </a>
+    {% else %}
+            <a href="/"><img src="{{ url_for('static', filename='ham.png') }}" width="35%" height="35%"/> </a>
+    {% endif %}
+    <p>Click the image to go back.</p>
 </body>
 </html>
