@@ -8,6 +8,7 @@ with open('emails.csv','r') as f: #email data from kaggle, stores in f, r is rea
     lines = [] # create an empty array to keep track of lines
     for line in f.readlines():
         lines.append(line.strip())
+    print(len(lines))
 
 header = lines[0]
 header = header.split(',')[1:]
@@ -56,6 +57,13 @@ knowledge and human power are synonymous .
 only high - quality stuff for low rates !
 100 % moneyback guarantee !
 there is no god , nature sufficeth unto herself in no wise hath she need of an author ."""
+
+"""attached is a brief memo outline some of the transtion issues with hpl to aep
+this is the first draft .
+the itilized items currently require some more action .
+please add any items and forward back to me . i will update
+thanks
+bob"""
 
 spamcounts = get_word_counts(teststr)
 print(rf.predict([spamcounts])) # Determining if its Spam or Ham
